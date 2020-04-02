@@ -1,9 +1,9 @@
 //add dependencies
-var express = require("express");
+const express = require("express");
 
 //set up express app
-var app = express();
+const app = express();
 
-
+const PORT = process.env.PORT || 3000;
 
 
