@@ -32,10 +32,16 @@ var notesExample = [
 //basic route that sends user to first AJAX page
 app.get("/", function(req, res) {
    
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "/public/index.html"));
   });
 
 
+  // notes route
+
+//add listen method so server can begin to listen on the PORT
+  app.listen(PORT,function() {
+    console.log("App listening on http://localhost: " + PORT);
+  });
   
 
 
