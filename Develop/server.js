@@ -38,6 +38,11 @@ app.get("/", function(req, res) {
 
   // notes route
 
+  app.get("/notes", function(req, res) {
+   
+    res.sendFile(path.join(__dirname, "/public/notes.html"));
+  });
+
 //add listen method so server can begin to listen on the PORT
   app.listen(PORT,function() {
     console.log("App listening on http://localhost: " + PORT);
