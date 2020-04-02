@@ -12,3 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+//add routes
+//basic route that sends user to first AJAX page
+app.get("/", function(req, res) {
+   
+    res.sendFile(path.join(__dirname, "index.html"));
+  });
