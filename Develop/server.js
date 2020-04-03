@@ -44,6 +44,12 @@ app.get("/notes", function(req, res) {
     console.log(`App listening on http://localhost:${PORT}`);
   });
   
-
-
+//read json file
+app.get("/api/notes", function(req,res) {
+  fs.readFile(__dirname + "db/db.json", function(error,data) {
+    if(error) { console.log("no reading");
+  }
+  res.json(JSON.parse(data));
+  });
+});
 
