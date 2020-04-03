@@ -50,10 +50,12 @@ const writeToFile = util.promisify(fs.writeFile);
     
     json.push(inputtedNote);
 
+    //write new notes to json file
+    writeToFile("./db/db.json", JSON.stringify(json)).then(function() {
+        console.log("success");
+    });
 
-    
-
-
+    res.json(inputtedNote);
 
 
   });
