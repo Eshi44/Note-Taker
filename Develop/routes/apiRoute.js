@@ -3,6 +3,10 @@ const fs = require("fs");
 
 //require  the json file
 const json = require("../db/db");
+//require util
+const util = require("util");
+//add variable to promisify that uses the writefile method
+const writeToFile = util.promisify(fs.writeFile);
 
 
 
@@ -45,6 +49,13 @@ const json = require("../db/db");
     inputtedNote["id"] =finalId;
     
     json.push(inputtedNote);
+
+
+    
+
+
+
+
   });
   
  
