@@ -1,3 +1,4 @@
+// console.log("hello world!");
 //add dependencies
 const express = require("express");
 
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 //set up the Express app - middleware to parse JSON data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 
 //add routes
@@ -29,7 +31,7 @@ require("./routes/htmlRoute")(app);
 
 //add listen method so server can begin to listen on the PORT
   app.listen(PORT,function() {
-    console.log("App listening on http://localhost: " + PORT);
+    console.log(`App listening on http://localhost:${PORT}`);
   });
   
 
