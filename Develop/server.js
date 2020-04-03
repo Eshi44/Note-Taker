@@ -14,18 +14,12 @@ app.use(express.json());
 
 //add routes
 //basic route that sends user to first AJAX page
-app.get("/", function(req, res) {
+// app.get("/", function(req, res) {
    
-    res.sendFile(path.join(__dirname, "/public/index.html"));
-  });
+//     res.sendFile(path.join(__dirname, "/public/index.html"));
+//   });
 
 
-  // notes route
-
-  app.get("/notes", function(req, res) {
-   
-    res.sendFile(path.join(__dirname, "/public/notes.html"));
-  });
 
 //add listen method so server can begin to listen on the PORT
   app.listen(PORT,function() {
