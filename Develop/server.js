@@ -19,6 +19,10 @@ app.use(express.json());
 //     res.sendFile(path.join(__dirname, "/public/index.html"));
 //   });
 
+//require apiRoute
+require("./routes/apiRoute")(app);
+
+
 
 
 //add listen method so server can begin to listen on the PORT

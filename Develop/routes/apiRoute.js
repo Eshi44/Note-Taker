@@ -20,7 +20,15 @@ var notesExample = [
 
 
   // notes route
+  module.exports = function(app) {
+
+    //to display notes example
   app.get("/notes", function(req, res) {
-   
-    res.sendFile(path.join(__dirname, "/public/notes.html"));
+    res.json(notesExample);
   });
+
+
+  
+ 
+
+}
