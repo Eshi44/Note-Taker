@@ -2,7 +2,7 @@
 const fs = require("fs");
 
 //require  the json file
-const json = require("../db/db");
+const json = require("/db/db");
 //require util
 const util = require("util");
 //add variable to promisify that uses the writefile method
