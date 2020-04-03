@@ -30,6 +30,8 @@ app.use(express.json());
 //require htmlRoute
 // require("./routes/htmlRoute")(app);
 
+//routes
+
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
@@ -38,13 +40,20 @@ app.get("/notes", function(req, res) {
   res.sendFile(path.join(__dirname, "public/notes.html"));
 });
 
+// * GET `*` - Should return the `index.html` file
+app.get("*", function(req,res){
+  res.sendFile(path.join(__dirname, "public/index.html"));
+  
+});
+
 
 //add listen method so server can begin to listen on the PORT
   app.listen(PORT,function() {
     console.log(`App listening on http://localhost:${PORT}`);
   });
   
-//read json file
+// * GET `/api/notes` - Should read the `db.json` file and return all saved notes as JSON.
+//read json file app.get route - requires fs package
 app.get("/api/notes", function(req,res) {
   fs.readFile(__dirname + "db/db.json", function(error,data) {
     if(error) { console.log("no reading");
@@ -53,3 +62,5 @@ app.get("/api/notes", function(req,res) {
   });
 });
 
+// * POST `/api/notes` - Should receive a new note to save on the request body, 
+//add it to the `db.json` file, and then return the new note to the client.
